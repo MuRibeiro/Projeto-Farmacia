@@ -1,7 +1,6 @@
 package com.generation.games.model;
 
 import java.math.BigDecimal;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 	@Entity
@@ -35,6 +33,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		@JsonIgnoreProperties("produto")
 		private Categoria categoria;
 
+		@ManyToOne
+		@JsonIgnoreProperties("usuario")
+		private Usuario usuario;
+		
 		public Long getId() {
 			return id;
 		}
